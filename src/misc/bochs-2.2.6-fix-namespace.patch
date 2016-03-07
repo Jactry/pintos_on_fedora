@@ -1,0 +1,13 @@
+--- bochs-2.2.6.origin/bx_debug/symbols.cc	2016-03-07 20:09:43.337598511 +0800
++++ bochs-2.2.6/bx_debug/symbols.cc	2016-03-07 19:35:05.801661249 +0800
+@@ -93,6 +93,10 @@
+ 
+ using namespace std;
+ 
++#ifdef __GNUC__
++using namespace __gnu_cxx;
++#endif
++
+ struct symbol_entry_t
+ {
+   symbol_entry_t (Bit32u _start = 0, char* _name = 0)
